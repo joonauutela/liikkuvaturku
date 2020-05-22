@@ -1,5 +1,9 @@
 @import '~antd/dist/antd.css';
 
+
+.content {
+  padding-bottom: 4rem;
+}
 .nav {
   position: absolute;
     top: 0;
@@ -82,16 +86,21 @@ size: 20%;
 }
 
 .leaflet-container {
-  width: 100%;
+  width: 95%;
+  margin: .5%;
   height: 550px;
-
+  margin-left: 2%;
 }
 
 .list-container {
   background: rgba(255, 255, 255, 0.171);
-
+  padding: 10;
   border-right: 1px solid grey;
   color: white;
+  padding: 20px;
+  margin: 10px;
+  margin-right: 0px;
+
 }
 
 .selected-item-container {
@@ -99,6 +108,11 @@ size: 20%;
   background: rgba(255, 255, 255, 0.157);
   height: 359px;
   margin-bottom: 20px;
+  padding: 20px;
+  margin: 10px;
+  margin-left: -0px;
+
+  height: 420px;
 }
 
 .list
@@ -112,7 +126,23 @@ size: 20%;
 .list-item
 {
   display: flex;
-  background: rgba(255, 255, 255, 0.171);
+  background: rgba(255, 255, 255, 0.164);
   padding: 10px;
   margin: 7px 0;
+}
+
+.image-container {
+  background: url('./media/hero_image.jpg') !important;
+  height: 290px;
+}
+
+.info-item {
+  text-align: left;
+  padding: 10px;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.164);
+  font-size: 20px;
+  padding-left: 30px;
 }
