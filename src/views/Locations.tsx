@@ -3,33 +3,36 @@ import '../App.css';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Row, Col } from 'antd';
 import axios from 'axios';
+import { Location } from '../types';
 
 const Locations: React.FC = () => {
 
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
+    const [data, setData] = useState<Location[]>();
 
     React.useEffect(() => {
-        const fetchPatientList = async () => {
-            const country = await axios.get('https://restcountries.eu/rest/v2/name/sweden');
-            console.log(country.data[0].latlng[0]);
-            setLatitude(country.data[0].latlng[0]);
-            setLongitude(country.data[0].latlng[1]);
+        const fetchLocationList = async () => {
+            const { data: locationData } = await axios.get<Location[]>('http://localhost:3003/api/locations');
+            setData(locationData);
         };
-        fetchPatientList();
+        fetchLocationList();
     }, []);
+
+    if (!data) return null;
 
     return (
         <div className="content">
+            {data[0].latitude}
             <div className="map-container">
-                <Map center={[latitude, longitude]} zoom={13}>
+                <Map center={[60.454510, 22.264824]} zoom={12}>
                     <TileLayer
                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                         attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                     />
-                    <Marker position={[latitude, longitude]}>
-                        <Popup>A pretty CSS3 popup.<br />Easily customizable.</Popup>
-                    </Marker>
+                    {data.map(location =>
+                        <Marker key={location.id} position={[location.latitude, location.longitude]}>
+                            <Popup><b>Osoite:</b> {location.address}</Popup>
+                        </Marker>
+                    )}
                 </Map>
             </div>
             <Row>
