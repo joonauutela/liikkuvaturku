@@ -1,9 +1,9 @@
 import { Location } from '../../types';
-import { LocationActions, SET_LOCATIONS } from '../actions';
+import { LocationActions, GET_LOCATIONS } from '../actionTypes';
 
 const locationReducer = (state: Location[] = [], action: LocationActions): Location[] => {
     switch (action.type) {
-        case SET_LOCATIONS:
+        case GET_LOCATIONS:
             console.log(action.payload.locations);
             return [...state, ...action.payload.locations];
         default:

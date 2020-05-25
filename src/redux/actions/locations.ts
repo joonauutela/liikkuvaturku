@@ -1,11 +1,11 @@
 import { Location } from '../../types';
-import { AppActions, SET_LOCATIONS } from '../actions';
+import { AppActions, GET_LOCATIONS } from '../actionTypes';
 import { Dispatch } from "redux";
 import { AppState } from '../../store/configureStore';
 import axios from 'axios';
 
 export const receiveLocationData = (locations: Location[]): AppActions => ({
-    type: SET_LOCATIONS,
+    type: GET_LOCATIONS,
     payload: {
         locations
     }

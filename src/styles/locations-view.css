@@ -1,0 +1,46 @@
+.leaflet-container {
+    width: 95%;
+    margin: .5%;
+    height: 550px;
+    margin-left: 2%;
+  }
+
+  .list
+  {
+    box-sizing: border-box;
+    padding-right: 20px;
+    height: 300px;
+    overflow-y: scroll;
+  }
+  
+  .list-item
+  {
+    display: flex;
+    background: rgba(255, 255, 255, 0.164);
+    padding: 10px;
+    margin: 7px 0;
+  }
+
+  
+.list-container {
+  background: rgba(255, 255, 255, 0.171);
+  padding: 10;
+  border-right: 1px solid grey;
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  margin-right: 0px;
+
+}
+
+.selected-item-container {
+  color: white;
+  background: rgba(255, 255, 255, 0.157);
+  height: 359px;
+  margin-bottom: 20px;
+  padding: 20px;
+  margin: 10px;
+  margin-left: -0px;
+
+  height: 420px;
+}

@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { locationReducer } from '../redux/reducers/locations';
-import { AppActions } from '../redux/actions';
+import { AppActions } from '../redux/actionTypes';
 
 export const rootReducer = combineReducers({
     locations: locationReducer
