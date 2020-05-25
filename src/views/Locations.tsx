@@ -2,12 +2,18 @@ import React, { useState } from 'react';
 import '../App.css';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Row, Col } from 'antd';
-import axios from 'axios';
 import { Location } from '../types';
+import { useSelector } from 'react-redux';
+import axios from 'axios';
 
 const Locations: React.FC = () => {
-
+    interface RootState {
+        locations: Location[];
+    }
     const [data, setData] = useState<Location[]>();
+    const selectLocations = (state: RootState) => state.locations;
+    const locations = useSelector(selectLocations);
+    console.log(locations);
 
     React.useEffect(() => {
         const fetchLocationList = async () => {
@@ -17,7 +23,7 @@ const Locations: React.FC = () => {
         fetchLocationList();
     }, []);
 
-    if (!data) return null;
+    if (!data) return <h2>Ladataan karttaa...</h2>;
 
     return (
         <div className="content">
@@ -68,7 +74,6 @@ const Locations: React.FC = () => {
             </Row>
 
         </div>
-
     );
 };
 

@@ -146,3 +146,15 @@ size: 20%;
   font-size: 20px;
   padding-left: 30px;
 }
+
+
+.img-container {
+  width: 700px;
+  height: 420px;
+}
+
+/* resize images */
+.img-container img {
+  width: 100%;
+  height: auto;
+}
