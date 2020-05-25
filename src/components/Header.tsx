@@ -1,7 +1,8 @@
 import React from 'react';
 import { Menu } from 'antd';
-import '../styles/header.css';
 import { Link } from "react-router-dom";
+
+import '../styles/header.css';
 
 const Header: React.FC = () => {
     return (

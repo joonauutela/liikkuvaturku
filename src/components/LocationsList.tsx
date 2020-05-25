@@ -1,14 +1,21 @@
 import React from 'react';
 import '../styles/locations-view.css';
 import { Location } from '../types';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectLocation } from '../redux/actions/selectedLocation';
 
 const LocationsList: React.FC = () => {
     interface RootState {
         locations: Location[];
     }
+    const dispatch = useDispatch();
+
     const selectLocations = (state: RootState) => state.locations;
     const locations = useSelector(selectLocations);
+
+    const handleClick = (id: string) => {
+        dispatch(selectLocation(id));
+    };
 
     if (!locations) return null;
 
@@ -16,7 +23,7 @@ const LocationsList: React.FC = () => {
         <div className="list-container">
             <h1>Ulkoliikuntalaitteet</h1>
             <ul className="list">
-                {locations.map(location => <li key={location.id} className="list-item">{location.address}</li>)}
+                {locations.map(location => <li onClick={() => handleClick(location.id)} key={location.id} className="list-item">{location.address}</li>)}
             </ul>
         </div>
     );

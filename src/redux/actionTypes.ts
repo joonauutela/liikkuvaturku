@@ -1,34 +1,30 @@
 import { Location } from '../types';
 
 // Actions types for all locations.
-export const GET_LOCATIONS = "GET_LOCATIONS";
+export const SET_LOCATIONS = "GET_LOCATIONS";
 
-export interface GetLocationsAction {
-    type: typeof GET_LOCATIONS;
+export interface SetLocationsAction {
+    type: typeof SET_LOCATIONS;
     payload: {
         locations: Location[];
     };
 }
 
-export type LocationActions = GetLocationsAction;
+export type LocationActions = SetLocationsAction;
 
 
 // Action types for selected location.
-export const GET_SIGNLE_LOCATION = "GET_SINGLE_LOCATION";
-export const SET_SIGNLE_LOCATION = "SET_SINGLE_LOCATION";
+export const SET_SELECTED_LOCATION = "SET_SELECTED_LOCATION";
 
-export interface GetLocationsAction {
-    type: typeof GET_LOCATIONS;
+
+export interface SetSelectedLocationAction {
+    type: typeof SET_SELECTED_LOCATION;
     payload: {
-        locations: Location[];
+        location: Location;
     };
 }
 
-export interface GetLocationsAction {
-    type: typeof GET_LOCATIONS;
-    payload: {
-        locations: Location[];
-    };
-}
+export type SelectedLocationActions = SetSelectedLocationAction;
 
-export type AppActions = LocationActions;
+// All actions
+export type AppActions = LocationActions | SelectedLocationActions;
