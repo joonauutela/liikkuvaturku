@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/locations-view.css';
 import { Location } from '../types';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectLocation } from '../redux/actions/selectedLocation';
+import { setLocation } from '../redux/actions/selectedLocation';
 
 const LocationsList: React.FC = () => {
     interface RootState {
@@ -14,7 +14,7 @@ const LocationsList: React.FC = () => {
     const locations = useSelector(selectLocations);
 
     const handleClick = (id: string) => {
-        dispatch(selectLocation(id));
+        dispatch(setLocation(id));
     };
 
     if (!locations) return null;

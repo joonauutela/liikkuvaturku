@@ -2,11 +2,13 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { locationReducer } from '../redux/reducers/locations';
 import { selectedLocationReducer } from '../redux/reducers/selectedLocation';
+import { imageReducer } from '../redux/reducers/images';
 import { AppActions } from '../redux/actionTypes';
 
 export const rootReducer = combineReducers({
     locations: locationReducer,
-    selectedLocation: selectedLocationReducer
+    selectedLocation: selectedLocationReducer,
+    images: imageReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

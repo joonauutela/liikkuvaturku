@@ -4,17 +4,17 @@ import { Dispatch } from "redux";
 import { AppState } from '../../store/configureStore';
 import axios from 'axios';
 
-export const receiveLocationData = (locations: Location[]): AppActions => ({
+export const setLocationData = (locations: Location[]): AppActions => ({
     type: SET_LOCATIONS,
     payload: {
         locations
     }
 });
 
-export const receiveLocations = () => {
+export const setLocations = () => {
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
         axios.get<Location[]>('http://localhost:3003/api/locations').then((response) => {
-            dispatch(receiveLocationData(response.data));
+            dispatch(setLocationData(response.data));
         });
     };
 };

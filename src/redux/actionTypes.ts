@@ -1,4 +1,4 @@
-import { Location } from '../types';
+import { Location, Image } from '../types';
 
 // Actions types for all locations.
 export const SET_LOCATIONS = "GET_LOCATIONS";
@@ -26,5 +26,17 @@ export interface SetSelectedLocationAction {
 
 export type SelectedLocationActions = SetSelectedLocationAction;
 
+// Action types for imageURLS.
+export const SET_IMAGES = "SET_IMAGES";
+
+export interface SetImageAction {
+    type: typeof SET_IMAGES;
+    payload: {
+        images: Image[];
+    };
+}
+
+export type ImageActions = SetImageAction;
+
 // All actions
-export type AppActions = LocationActions | SelectedLocationActions;
+export type AppActions = LocationActions | SelectedLocationActions | ImageActions;
