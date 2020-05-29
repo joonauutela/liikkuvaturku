@@ -14,6 +14,7 @@ export interface Image {
 
 export interface RootState {
     selectedLocation: Location;
+    locations: Location[];
     images: Image[];
 }
 

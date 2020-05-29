@@ -12,7 +12,7 @@ export const setLocationData = (location: Location): AppActions => ({
 });
 
 export const setLocation = (id: string) => {
-    console.log(`http://localhost:3003/api/locations/${id}`);
+
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
         axios.get<Location[]>(`http://localhost:3003/api/locations/${id}`).then((response) => {
             dispatch(setLocationData(response.data[0]));

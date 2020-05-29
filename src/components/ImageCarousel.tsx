@@ -12,7 +12,7 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
 
     useEffect(() => {
         dispatch(setImagesById(id));
-    });
+    }, [dispatch, id]);
 
     const selectImages = (state: RootState) => state.images;
     const selectedImages = useSelector(selectImages);
@@ -24,7 +24,7 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
                 <img src={selectedImages[0].image_url} />
             </div>
             <div className="img-container">
-                <img src="http://localhost:3003/images/kupittaa2.JPG" />
+                <img src={selectedImages[1].image_url} />
             </div>
         </Carousel>
     );

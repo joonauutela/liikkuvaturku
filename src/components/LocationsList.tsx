@@ -1,13 +1,12 @@
 import React from 'react';
-import '../styles/locations-view.css';
-import { Location } from '../types';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLocation } from '../redux/actions/selectedLocation';
+import { RootState } from '../types';
+
+import '../styles/locations-view.css';
 
 const LocationsList: React.FC = () => {
-    interface RootState {
-        locations: Location[];
-    }
+
     const dispatch = useDispatch();
 
     const selectLocations = (state: RootState) => state.locations;
