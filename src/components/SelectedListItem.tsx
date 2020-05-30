@@ -23,6 +23,7 @@ const SelectedListItem: React.FC = () => {
                     </div>
                     :
                     <div>
+                        <p className="info-item"><b>Nimi:</b> {selectedLocation.name}</p>
                         <p className="info-item"><b>Osoite:</b> {selectedLocation.address}</p>
                         <p className="info-item"><b>Laitteet: </b>Ylätalja, punnerruslaite, dippitanko</p>
                         <Link to={`/locations/${selectedLocation.id}`}>

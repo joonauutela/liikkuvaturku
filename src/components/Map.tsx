@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../types';
 import { setLocation } from '../redux/actions/selectedLocation';
+import { setMapParams } from '../redux/actions/map';
+import { Link } from 'react-router-dom';
 
 import '../styles/locations-view.css';
 
@@ -10,22 +12,28 @@ const LocationMap: React.FC = () => {
 
     const [lat, setLat] = useState(60.454510);
     const [long, setLong] = useState(22.264824);
-    const [zoom, setZoom] = useState(12);
 
     const selectLocations = (state: RootState) => state.locations;
+    const selectMapParams = (state: RootState) => state.map;
+
     const locations = useSelector(selectLocations);
+    const mapParams = useSelector(selectMapParams);
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        setLat(mapParams.latitude);
+        setLong(mapParams.longitude);
+    }, [mapParams]);
 
     const handleClick = (id: string, lat: number, long: number) => {
         dispatch(setLocation(id));
-        setZoom(13);
-        setLat(lat);
-        setLong(long);
+        dispatch(setMapParams(lat, long, 14));
     };
 
     return (
         <div className="map-container">
-            <Map center={[lat, long]} zoom={zoom}>
+            <Map center={[lat, long]} zoom={mapParams.zoom}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
@@ -36,7 +44,14 @@ const LocationMap: React.FC = () => {
                         position={[location.latitude, location.longitude]}
                         onClick={() => handleClick(location.id, location.latitude, location.longitude)}
                     >
-                        <Popup><b>Osoite:</b> {location.address}</Popup>
+                        <Popup>
+                            <p><b>Nimi:</b> {location.name}</p>
+                            <p><b>Osoite:</b> {location.address}</p>
+                            <Link to={`/locations/${location.id}`}>
+                                <p className="info-item">Katso kuvat täältä</p>
+                            </Link>
+                        </Popup>
+
                     </Marker>
                 )}
             </Map>

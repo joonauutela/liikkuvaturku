@@ -3,12 +3,15 @@ import thunk, { ThunkMiddleware } from 'redux-thunk';
 import { locationReducer } from '../redux/reducers/locations';
 import { selectedLocationReducer } from '../redux/reducers/selectedLocation';
 import { imageReducer } from '../redux/reducers/images';
+import { mapReducer } from '../redux/reducers/map';
+
 import { AppActions } from '../redux/actionTypes';
 
 export const rootReducer = combineReducers({
     locations: locationReducer,
     selectedLocation: selectedLocationReducer,
-    images: imageReducer
+    images: imageReducer,
+    map: mapReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

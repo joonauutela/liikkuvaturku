@@ -23,9 +23,7 @@ export const setImages = () => {
 
 export const setImagesById = (id: string) => {
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
-        console.log(`http://localhost:3003/api/images/${id}`);
         axios.get<Image[]>(`http://localhost:3003/api/images/${id}`).then((response) => {
-            console.log(response.data);
             dispatch(setImageData(response.data));
         });
     };
