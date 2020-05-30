@@ -1,8 +1,9 @@
 .leaflet-container {
     width: 95%;
     margin: .5%;
-    height: 550px;
+    height: 50vh;
     margin-left: 2%;
+    z-index: 90;
   }
 
   .list

@@ -27,6 +27,7 @@
     color: white;
     text-decoration: none;
     font-size: 2rem;
+    padding: 0 1rem;
     text-align: left !important;
 }
 
@@ -48,5 +49,15 @@
 .navbar_navigation-items li:hover,
 .navbar_navigation-items li:active{
     color: rgba(202, 202, 202, 0.753) !important;
+}
 
+@media (max-width: 760px) {
+    .navbar_navigation-items {
+        display: none;
+    }
+}
+@media (min-width: 761px) {
+    .navbar_toggle-button {
+        display: none;
+    }
 }
