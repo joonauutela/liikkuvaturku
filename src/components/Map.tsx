@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, Viewport } from 'react-leaflet';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../types';
 import { setLocation } from '../redux/actions/selectedLocation';
@@ -12,6 +12,8 @@ const LocationMap: React.FC = () => {
 
     const [lat, setLat] = useState(60.454510);
     const [long, setLong] = useState(22.264824);
+
+    let zoom = 13;
 
     const selectLocations = (state: RootState) => state.locations;
     const selectMapParams = (state: RootState) => state.map;
@@ -28,12 +30,20 @@ const LocationMap: React.FC = () => {
 
     const handleClick = (id: string, lat: number, long: number) => {
         dispatch(setLocation(id));
-        dispatch(setMapParams(lat, long, 14));
+        dispatch(setMapParams(lat, long, zoom));
+    };
+    const viewport: Viewport = {
+        center: [lat, long],
+        zoom: mapParams.zoom,
     };
 
+    const getZoom = (viewport: Viewport) => {
+        if (viewport.zoom && viewport.zoom !== null)
+            zoom = viewport.zoom;
+    };
     return (
         <div className="map-container">
-            <Map center={[lat, long]} zoom={mapParams.zoom}>
+            <Map viewport={viewport} onViewportChange={getZoom}>
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"

@@ -5,7 +5,7 @@
     margin-right: 40px;
     font-size: 2.5vmin;
     color: rgb(245, 245, 245) !important;
-    font-weight: bold;
+
     font-family: 'Voces', cursive;
   }
   
@@ -36,7 +36,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: rgba(255, 255, 255, 0.938);
+    color: rgba(207, 46, 46, 0.938);
     background: rgba(151, 151, 151, 0.719);
     border: 10px solid rgb(59, 199, 223);
     text-transform: uppercase;
