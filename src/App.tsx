@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect } from "react";
-import Header from './components/Header';
+import Navbar from './components/Navbar/Navbar';
 import Home from './views/Home';
 import Locations from './views/Locations';
 import LocationInfo from './views/LocationInfo';
@@ -22,7 +22,7 @@ const App: React.FC = () => {
     return (
         <Router>
             <div className="App">
-                <Header />
+                <Navbar />
                 <Switch>
                     <Route path="/locations/:id">
                         <LocationInfo />
