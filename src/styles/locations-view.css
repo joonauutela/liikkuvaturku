@@ -10,7 +10,7 @@
   {
     box-sizing: border-box;
     padding-right: 20px;
-    height: 300px;
+    height: 18rem;
     overflow-y: scroll;
   }
   
@@ -21,31 +21,37 @@
     padding: 10px;
     margin: 7px 0;
     cursor: pointer;
-    font-size: 22px;
+    font-size: 1rem;
+    color: white;
+    text-align: left;
   }
 
   
 .list-container {
   background: rgba(255, 255, 255, 0.171);
-  padding: 10;
   border-right: 1px solid grey;
   color: white;
   padding: 20px;
   margin: 10px;
   margin-right: 0px;
+  height: 25rem;
 
+}
+.list-container-mobile {
+  background: rgba(255, 255, 255, 0.171);
+  color: white;
+  padding: 0.5rem;
+  margin: 0 10px;
 }
 
 .selected-item-container {
   color: white;
   background: rgba(255, 255, 255, 0.157);
-  height: 359px;
   margin-bottom: 20px;
   padding: 20px;
   margin: 10px;
   margin-left: -0px;
-
-  height: 420px;
+  height: 25rem;
 }
 
 .info-item {

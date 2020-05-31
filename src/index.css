@@ -6,7 +6,7 @@ html {
 
 body {
   height: 100%;
-  background: url("./media/background.jpg") no-repeat center center fixed; 
+  background: linear-gradient(90deg, rgba(38,183,255,1) 0%, rgba(79,156,218,1) 35%, rgba(76,179,237,1) 100%);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,7 +22,4 @@ h1 {
 
 p {
   font-style: 'Roboto';
-}
-.content {
-  padding-bottom: 4rem;
 }

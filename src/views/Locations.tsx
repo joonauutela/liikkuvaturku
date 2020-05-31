@@ -6,6 +6,16 @@ import LocationsList from '../components/LocationsList';
 import SelectedListItem from '../components/SelectedListItem';
 
 const Locations: React.FC = () => {
+
+    if (window.innerWidth < 700) {
+        return (
+            <div className="content">
+                <LocationMap />
+                <LocationsList />
+
+            </div>
+        );
+    }
     return (
         <div className="content">
             <LocationMap />

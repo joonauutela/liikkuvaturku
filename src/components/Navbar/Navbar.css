@@ -26,7 +26,7 @@
 .navbar_logo {
     color: white;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem;
     padding: 0 1rem;
     text-align: left !important;
 }
@@ -55,6 +55,7 @@
     .navbar_navigation-items {
         display: none;
     }
+    
 }
 @media (min-width: 761px) {
     .navbar_toggle-button {

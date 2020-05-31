@@ -10,25 +10,26 @@
     line-height: 2.8em;
     position: relative;
     color: rgb(255, 255, 255);
-    margin-left: 20px;
-    font-size: 2vmin;
+    margin-left: 2%;
+    font-size: 1.2rem;
     font-family: 'Voces', cursive;
     padding-top: 20px;
     padding-bottom: 3em;
 }
 
 .footer {
-  height: 19rem;
+  padding-top: 3rem;
+  height: 15vh;
 }
 
 .footer-inner {
-  padding-top: 1rem;
+  padding-top: 2rem;
   position: relative;
   border-top: 1px solid white !important;
   border-width: 50%;
   width: 33%;
   margin-left: 32%;
-  font-size: 2vmin;
+  font-size: 0.8rem;
   color: white;
 }
 
