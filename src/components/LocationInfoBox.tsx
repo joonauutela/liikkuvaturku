@@ -20,8 +20,8 @@ const LocationInfoBox: React.FC<{ id: string }> = ({ id }) => {
     if (selectedLocation === null || !selectedLocation) return null;
     return (
         <div>
-            <h1>{selectedLocation.address}</h1>
-            <p className="info-text">Laitteet: ylätalja, punnerruslaite, soutulaite{selectedLocation.exercise_machines}</p>
+            <h1>{selectedLocation.name}</h1>
+            <p className="info-text">Osoite: {selectedLocation.address}</p>
             <Link to={`/locations`}><Button ghost className="button">Takaisin</Button></Link>
         </div>
     );

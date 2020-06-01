@@ -12,16 +12,16 @@ export const setImageData = (images: Image[]): AppActions => ({
 });
 
 
-export const setImages = () => {
+export const setMachineImages = () => {
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
-        axios.get<Image[]>('http://localhost:3003/api/images/locations').then((response) => {
+        axios.get<Image[]>('http://localhost:3003/api/images/machines').then((response) => {
             dispatch(setImageData(response.data));
         });
     };
 };
 
 
-export const setImagesById = (id: string) => {
+export const setLocationImagesById = (id: string) => {
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
         axios.get<Image[]>(`http://localhost:3003/api/images/locations/${id}`).then((response) => {
             dispatch(setImageData(response.data));

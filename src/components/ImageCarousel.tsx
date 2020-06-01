@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Carousel } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
-import { setImagesById } from '../redux/actions/images';
+import { setLocationImagesById } from '../redux/actions/images';
 import { RootState } from '../types';
 
 import '../styles/locationInfo-view.css';
@@ -11,7 +11,7 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(setImagesById(id));
+        dispatch(setLocationImagesById(id));
     }, [dispatch, id]);
 
     const selectImages = (state: RootState) => state.images;

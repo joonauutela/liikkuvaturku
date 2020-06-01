@@ -2,7 +2,6 @@
     width: 90%;
     margin-left:5%;
     padding: 1% 0;
-
 }
 
 .menu_item-button {
@@ -23,6 +22,7 @@
     padding: 0 20px;
     color: white;
     overflow: hidden;
+    font-size: 1.25rem;
     transition: max-height 0.2s ease-in-out;
 }
   

@@ -15,9 +15,7 @@ export const setLocation = (id: string) => {
 
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
         axios.get<Location[]>(`http://localhost:3003/api/locations/${id}`).then((response) => {
-            if (!response.data && response.data !== null) {
-                dispatch(setLocationData(response.data[0]));
-            }
+            dispatch(setLocationData(response.data[0]));
         });
     };
 };

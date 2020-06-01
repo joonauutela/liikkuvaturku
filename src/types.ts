@@ -9,7 +9,7 @@ export interface Location {
 
 export interface Image {
     id: string;
-    location_id: string;
+    destination_id: string;
     image_url: string;
 }
 
