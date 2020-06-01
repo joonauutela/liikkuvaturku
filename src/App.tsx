@@ -4,6 +4,7 @@ import Navbar from './components/Navbar/Navbar';
 import SideDrawer from './components/SideDrawer/SideDrawer';
 import Home from './views/Home';
 import Locations from './views/Locations';
+import ExerciseInfo from './views/ExerciseInfo';
 import LocationInfo from './views/LocationInfo';
 import Footer from './components/Footer';
 import {
@@ -13,6 +14,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { setLocations } from './redux/actions/locations';
 import Backdrop from './components/Backdrop/Backdrop';
+import { setMachines } from './redux/actions/machines';
 
 const App: React.FC = () => {
 
@@ -22,6 +24,7 @@ const App: React.FC = () => {
 
     useEffect(() => {
         dispatch(setLocations());
+        dispatch(setMachines());
     }, [dispatch]);
 
 
@@ -48,6 +51,9 @@ const App: React.FC = () => {
                     </Route>
                     <Route path="/locations">
                         <Locations />
+                    </Route>
+                    <Route path="/exerciseinfo">
+                        <ExerciseInfo />
                     </Route>
                     <Route path="/">
                         <Home />

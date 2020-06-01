@@ -1,4 +1,4 @@
-import { Location, Image, Map } from '../types';
+import { Location, Image, Map, Machine } from '../types';
 
 // Actions types for all locations.
 export const SET_LOCATIONS = "GET_LOCATIONS";
@@ -50,5 +50,17 @@ export interface SetMapActions {
 
 export type MapActions = SetMapActions;
 
+// Action types for excercise machines
+export const SET_MACHINES = "SET_MACHINE";
+
+export interface SetMachineActions {
+    type: typeof SET_MACHINES;
+    payload: {
+        machines: Machine[];
+    };
+}
+
+export type MachineActions = SetMachineActions;
+
 // All actions
-export type AppActions = LocationActions | SelectedLocationActions | ImageActions | MapActions;
+export type AppActions = LocationActions | SelectedLocationActions | ImageActions | MapActions | MachineActions;

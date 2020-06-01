@@ -17,7 +17,7 @@ const Navbar: React.FC<{ drawerHandler: () => void }> = ({ drawerHandler }) => {
                     <ul>
                         <Link to="/"><li>Aloitus</li></Link>
                         <Link to="/locations"><li>Sijainnit</li></Link>
-                        <Link to="/"><li>Laiteohjeet</li></Link>
+                        <Link to="/exerciseinfo"><li>Liikeohjeet</li></Link>
                     </ul>
                 </div>
             </nav>

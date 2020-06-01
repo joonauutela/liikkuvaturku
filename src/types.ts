@@ -19,11 +19,20 @@ export interface Map {
     zoom: number;
 }
 
+export interface Machine {
+    id: string;
+    name: string;
+    content: string;
+    repetitions: string;
+    sets: string;
+}
+
 export interface RootState {
     selectedLocation: Location;
     locations: Location[];
     images: Image[];
     map: Map;
+    machines: Machine[];
 }
 
 export interface ParamTypes {

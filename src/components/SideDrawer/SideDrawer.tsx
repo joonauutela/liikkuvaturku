@@ -13,7 +13,7 @@ const SideDrawer: React.FC<{ show: boolean; click: () => void }> = ({ show, clic
         <ul className={drawerClasses}>
             <Link to={"/"} onClick={() => click()}><li>Aloitus</li></Link>
             <Link to={"/locations"} onClick={() => click()}><li>Sijainnit</li></Link>
-            <Link to={"/"} onClick={() => click()}><li>Liikeohjeet</li></Link>
+            <Link to={"/exerciseinfo"} onClick={() => click()}><li>Liikeohjeet</li></Link>
         </ul>
     );
 };

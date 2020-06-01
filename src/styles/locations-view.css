@@ -6,16 +6,14 @@
     z-index: 90;
   }
 
-  .list
-  {
+.list {
     box-sizing: border-box;
     padding-right: 20px;
     height: 18rem;
     overflow-y: scroll;
-  }
+}
   
-  .list-item
-  {
+.list-item {
     display: flex;
     background: rgba(255, 255, 255, 0.164);
     padding: 10px;
@@ -24,7 +22,7 @@
     font-size: 1rem;
     color: white;
     text-align: left;
-  }
+}
 
   
 .list-container {

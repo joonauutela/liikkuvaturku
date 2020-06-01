@@ -4,6 +4,7 @@ import { locationReducer } from '../redux/reducers/locations';
 import { selectedLocationReducer } from '../redux/reducers/selectedLocation';
 import { imageReducer } from '../redux/reducers/images';
 import { mapReducer } from '../redux/reducers/map';
+import { machineReducer } from '../redux/reducers/machines';
 
 import { AppActions } from '../redux/actionTypes';
 
@@ -11,7 +12,8 @@ export const rootReducer = combineReducers({
     locations: locationReducer,
     selectedLocation: selectedLocationReducer,
     images: imageReducer,
-    map: mapReducer
+    map: mapReducer,
+    machines: machineReducer
 });
 
 export type AppState = ReturnType<typeof rootReducer>;
