@@ -12,6 +12,7 @@ export const setLocationData = (location: Location): AppActions => ({
 });
 
 export const setLocations = () => {
+
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
         const fetchData = async () => {
             const db = firebase.firestore();

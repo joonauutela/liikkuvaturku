@@ -1,31 +1,29 @@
-import React, { useEffect } from 'react';
+/* eslint-disable no-undef */
+import React from 'react';
 import { Carousel } from 'antd';
-import { useSelector, useDispatch } from 'react-redux';
-import { setLocationImagesById } from '../redux/actions/images';
+import { useSelector } from 'react-redux';
 import { RootState } from '../types';
 
 import '../styles/locationInfo-view.css';
 
 const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
 
-    const dispatch = useDispatch();
+    const selectLocations = (state: RootState) => state.locations;
+    const locations = useSelector(selectLocations);
 
-    useEffect(() => {
-        dispatch(setLocationImagesById(id));
-    }, [dispatch, id]);
+    const selectedLocation = locations.filter(location => location.id === id)[0];
 
-    const selectImages = (state: RootState) => state.images;
-    const selectedImages = useSelector(selectImages);
-
-    if (selectedImages.length === 0 || !selectedImages) return null;
+    if (selectedLocation === null || !selectedLocation) return null;
+    else if (!selectedLocation.images[0]) return null;
     return (
         <Carousel draggable={true}>
-            <div className="img-container">
-                <img src={selectedImages[0].image_url} />
-            </div>
-            <div className="img-container">
-                <img src={selectedImages[1].image_url} />
-            </div>
+            {selectedLocation.images.map(image => {
+                return (
+                    <div className="img-container" key={image}>
+                        <img src={require(`.././media/locations/${image}`)} />
+                    </div>
+                );
+            })}
         </Carousel>
     );
 };

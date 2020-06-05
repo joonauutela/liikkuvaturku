@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setLocation } from '../redux/actions/selectedLocation';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { RootState } from '../types';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
@@ -9,13 +8,10 @@ import '../styles/locationInfo-view.css';
 
 const LocationInfoBox: React.FC<{ id: string }> = ({ id }) => {
 
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(setLocation(id));
-    }, [dispatch]);
+    const selectLocations = (state: RootState) => state.locations;
+    const locations = useSelector(selectLocations);
 
-    const selectLocations = (state: RootState) => state.selectedLocation;
-    const selectedLocation = useSelector(selectLocations);
+    const selectedLocation = locations.filter(location => location.id === id)[0];
 
     if (selectedLocation === null || !selectedLocation) return null;
     return (

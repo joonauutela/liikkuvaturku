@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer, Viewport } from 'react-leaflet';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../types';
+import { RootState, Location } from '../types';
 import { setLocation } from '../redux/actions/selectedLocation';
 import { setMapParams } from '../redux/actions/map';
 import { Link } from 'react-router-dom';
@@ -28,8 +28,8 @@ const LocationMap: React.FC = () => {
         setLong(mapParams.longitude);
     }, [mapParams]);
 
-    const handleClick = (id: string, lat: number, long: number) => {
-        dispatch(setLocation(id));
+    const handleClick = (location: Location, lat: number, long: number) => {
+        dispatch(setLocation(location));
         dispatch(setMapParams(lat, long, zoom));
     };
     const viewport: Viewport = {
@@ -52,7 +52,7 @@ const LocationMap: React.FC = () => {
                     <Marker
                         key={location.id}
                         position={[location.latitude, location.longitude]}
-                        onClick={() => handleClick(location.id, location.latitude, location.longitude)}
+                        onClick={() => handleClick(location, location.latitude, location.longitude)}
                     >
                         <Popup>
                             <p><b>Nimi:</b> {location.name}</p>

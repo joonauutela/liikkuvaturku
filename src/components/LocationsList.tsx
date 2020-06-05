@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLocation } from '../redux/actions/selectedLocation';
 import { setMapParams } from '../redux/actions/map';
-import { RootState } from '../types';
+import { RootState, Location } from '../types';
 import { Link } from 'react-router-dom';
 
 import '../styles/locations-view.css';
@@ -15,8 +15,8 @@ const LocationsList: React.FC = () => {
     const locations = useSelector(selectLocations);
 
 
-    const handleClick = (id: string, latitude: number, longitude: number) => {
-        dispatch(setLocation(id));
+    const handleClick = (location: Location, latitude: number, longitude: number) => {
+        dispatch(setLocation(location));
         dispatch(setMapParams(latitude, longitude, 14));
     };
     if (!locations) {
@@ -45,7 +45,7 @@ const LocationsList: React.FC = () => {
             <ul className="list">
                 {locations.map(location =>
                     <li
-                        onClick={() => handleClick(location.id, location.latitude, location.longitude)}
+                        onClick={() => handleClick(location, location.latitude, location.longitude)}
                         key={location.id}
                         className="list-item">
                         {location.name}
