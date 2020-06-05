@@ -22,7 +22,6 @@ const Accordion: React.FC<{ id: string; name: string; content: string; reps: str
     const selectedImages = useSelector(selectImages);
 
     useEffect(() => {
-        selectedImages.map(image => console.log(image.destination_id));
         setImage(selectedImages.filter(image => image.destination_id === id)[0]);
     });
 

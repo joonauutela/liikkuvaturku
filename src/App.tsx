@@ -15,6 +15,7 @@ import { useDispatch } from 'react-redux';
 import { setLocations } from './redux/actions/locations';
 import Backdrop from './components/Backdrop/Backdrop';
 import { setMachines } from './redux/actions/machines';
+import firebase from './firebase';
 
 const App: React.FC = () => {
 
@@ -26,6 +27,15 @@ const App: React.FC = () => {
         dispatch(setLocations());
         dispatch(setMachines());
     }, [dispatch]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const db = firebase.firestore();
+            const locationData = await db.collection('locations').get();
+            locationData.forEach(location => console.log(location.data()));
+        };
+        fetchData();
+    }, []);
 
 
     // TODO: seperate navbar functionality and components into its own component

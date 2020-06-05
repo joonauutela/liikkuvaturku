@@ -19,7 +19,6 @@ const LocationsList: React.FC = () => {
         dispatch(setLocation(id));
         dispatch(setMapParams(latitude, longitude, 14));
     };
-    console.log(window.innerHeight);
     if (!locations) {
         return null;
     }
