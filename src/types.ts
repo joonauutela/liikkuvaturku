@@ -4,7 +4,7 @@ export interface Location {
     latitude: number;
     longitude: number;
     address: string;
-    exercise_machines: string;
+    images: string[];
 }
 
 export interface Image {

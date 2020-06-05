@@ -2,19 +2,34 @@ import { Location } from '../../types';
 import { AppActions, SET_LOCATIONS } from '../actionTypes';
 import { Dispatch } from "redux";
 import { AppState } from '../../store/configureStore';
-import axios from 'axios';
+import firebase from '../../firebase';
 
-export const setLocationData = (locations: Location[]): AppActions => ({
+export const setLocationData = (location: Location): AppActions => ({
     type: SET_LOCATIONS,
     payload: {
-        locations
+        location
     }
 });
 
 export const setLocations = () => {
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
-        axios.get<Location[]>('http://localhost:3003/api/locations').then((response) => {
-            dispatch(setLocationData(response.data));
-        });
+        const fetchData = async () => {
+            const db = firebase.firestore();
+            const locationData = await db.collection('locations').get();
+
+            locationData.forEach(location => {
+                const data = location.data();
+                const locationToAppend: Location = {
+                    id: data.location_id,
+                    name: data.name,
+                    latitude: data.latitude,
+                    longitude: data.longitude,
+                    address: data.address,
+                    images: data.images
+                };
+                dispatch(setLocationData(locationToAppend));
+            });
+        };
+        fetchData();
     };
 };

@@ -6,7 +6,7 @@ export const SET_LOCATIONS = "GET_LOCATIONS";
 export interface SetLocationsAction {
     type: typeof SET_LOCATIONS;
     payload: {
-        locations: Location[];
+        location: Location;
     };
 }
 
