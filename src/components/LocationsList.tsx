@@ -1,24 +1,15 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setLocation } from '../redux/actions/selectedLocation';
-import { setMapParams } from '../redux/actions/map';
+import { useSelector } from 'react-redux';
 import { RootState, Location } from '../types';
 import { Link } from 'react-router-dom';
 
 import '../styles/locations-view.css';
 
-const LocationsList: React.FC = () => {
-
-    const dispatch = useDispatch();
+const LocationsList: React.FC<{ handleClick: (location: Location, latitude: number, longitude: number) => void }> = ({ handleClick }) => {
 
     const selectLocations = (state: RootState) => state.locations;
     const locations = useSelector(selectLocations);
 
-
-    const handleClick = (location: Location, latitude: number, longitude: number) => {
-        dispatch(setLocation(location));
-        dispatch(setMapParams(latitude, longitude, 14));
-    };
     if (!locations) {
         return null;
     }

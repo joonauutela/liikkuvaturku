@@ -1,15 +1,10 @@
 import React from 'react';
-import { RootState } from '../types';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Location } from '../types';
 
 import '../styles/locations-view.css';
 
-const SelectedListItem: React.FC = () => {
-
-    const selectLocations = (state: RootState) => state.selectedLocation;
-    const selectedLocation = useSelector(selectLocations);
-
+const SelectedListItem: React.FC<{ selectedLocation: Location | null }> = ({ selectedLocation }) => {
     return (
         <div className="selected-item-container">
             <h1>Valittu sijainti</h1>
