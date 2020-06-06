@@ -25,6 +25,7 @@ export interface Machine {
     content: string;
     repetitions: string;
     sets: string;
+    image: string;
 }
 
 export interface RootState {

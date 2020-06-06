@@ -14,7 +14,7 @@ const LocationsList: React.FC<{ handleClick: (location: Location, latitude: numb
         return null;
     }
     // Mobile
-    else if (window.innerWidth < 700) {
+    else if (window.innerWidth < 900) {
         return (
             <div className="list-container-mobile">
                 <h1>Ulkoliikuntalaitteet</h1>

@@ -14,11 +14,11 @@ const ExerciseInfo: React.FC = () => {
             {machines.map(machine =>
                 <Accordion
                     key={machine.id}
-                    id={machine.id}
                     name={machine.name}
                     content={machine.content}
                     reps={machine.repetitions}
                     sets={machine.sets}
+                    image={machine.image}
                 />
             )}
         </div>

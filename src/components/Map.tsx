@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer, Viewport } from 'react-leaflet';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState, Location } from '../types';
-import { setMapParams } from '../redux/actions/map';
 import { Link } from 'react-router-dom';
 
 import '../styles/locations-view.css';
 
-const LocationMap: React.FC = () => {
+const LocationMap: React.FC<{ handleClickMap: (location: Location, latitude: number, longitude: number, zoom: number) => void }> = ({ handleClickMap }) => {
 
     const [lat, setLat] = useState(60.454510);
     const [long, setLong] = useState(22.264824);
@@ -20,16 +19,11 @@ const LocationMap: React.FC = () => {
     const locations = useSelector(selectLocations);
     const mapParams = useSelector(selectMapParams);
 
-    const dispatch = useDispatch();
-
     useEffect(() => {
         setLat(mapParams.latitude);
         setLong(mapParams.longitude);
     }, [mapParams]);
 
-    const handleClick = (location: Location, lat: number, long: number) => {
-        dispatch(setMapParams(lat, long, zoom));
-    };
     const viewport: Viewport = {
         center: [lat, long],
         zoom: mapParams.zoom,
@@ -50,7 +44,7 @@ const LocationMap: React.FC = () => {
                     <Marker
                         key={location.id}
                         position={[location.latitude, location.longitude]}
-                        onClick={() => handleClick(location, location.latitude, location.longitude)}
+                        onClick={() => handleClickMap(location, location.latitude, location.longitude, zoom)}
                     >
                         <Popup>
                             <p><b>Nimi:</b> {location.name}</p>

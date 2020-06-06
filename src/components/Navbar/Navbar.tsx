@@ -11,7 +11,7 @@ const Navbar: React.FC<{ drawerHandler: () => void }> = ({ drawerHandler }) => {
                 <div className="navbar_toggle-button">
                     <DrawerToggle click={drawerHandler} />
                 </div>
-                <div className="navbar_logo"><Link to={"/"}></Link>LIIKKUVATURKU</div>
+                <Link to={"/"} className="navbar_logo">LIIKKUVATURKU</Link>
                 <div className="spacer" />
                 <div className="navbar_navigation-items">
                     <ul>

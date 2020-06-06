@@ -2,19 +2,35 @@ import { Machine } from '../../types';
 import { AppActions, SET_MACHINES } from '../actionTypes';
 import { Dispatch } from "redux";
 import { AppState } from '../../store/configureStore';
-import axios from 'axios';
+import firebase from '../../firebase';
 
-export const setLocationData = (machines: Machine[]): AppActions => ({
+export const setMachineData = (machine: Machine): AppActions => ({
     type: SET_MACHINES,
     payload: {
-        machines
+        machine
     }
 });
 
 export const setMachines = () => {
+
     return (dispatch: Dispatch<AppActions>, _getState: () => AppState) => {
-        axios.get<Machine[]>('http://localhost:3003/api/machines').then((response) => {
-            dispatch(setLocationData(response.data));
-        });
+        const fetchData = async () => {
+            const db = firebase.firestore();
+            const machineData = await db.collection('excercise_machines').get();
+
+            machineData.forEach(machine => {
+                const data = machine.data();
+                const machineToAppend: Machine = {
+                    id: data.machine_id,
+                    name: data.name,
+                    content: data.content,
+                    repetitions: data.repetitions,
+                    sets: data.sets,
+                    image: data.image
+                };
+                dispatch(setMachineData(machineToAppend));
+            });
+        };
+        fetchData();
     };
 };

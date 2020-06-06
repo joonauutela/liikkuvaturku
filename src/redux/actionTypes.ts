@@ -56,7 +56,7 @@ export const SET_MACHINES = "SET_MACHINE";
 export interface SetMachineActions {
     type: typeof SET_MACHINES;
     payload: {
-        machines: Machine[];
+        machine: Machine;
     };
 }
 
