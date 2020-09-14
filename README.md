@@ -1,44 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# [Liikkuvaturku]
 
-## Available Scripts
 
-In the project directory, you can run:
+<img src="https://miro.medium.com/max/1804/1*tijYDzC59_wasLntTiBeSg.png" height="200" />
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s---GoJn40g--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn-images-1.medium.com/max/398/1%2ATPkhIqPgVzFSSpwdlVwhVw.png" height="200" />
 
-### `npm start`
+### About the website
+https://liikkuvaturku.fi/ makes it easy to find your nearest outdoor
+exercise-machines provided with quality images. New locations will be
+added in the future.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Tech
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Liikkuvaturku uses a number of open source projects to work properly:
 
-### `npm test`
+* React (hooks)
+* Typescript
+* Redux
+* Firebase
+* ESLint
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
 
-### `npm run build`
+Install the dependencies and devDependencies. Before starting the server you need to add 'firebase.ts' config file to the 'src'-root.
+Once config is added, start the server.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+$ cd liikkuvaturku
+$ npm install 
+$ npm start
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Todos
 
-### `npm run eject`
+ - Dockerize project
+ - Add new locations
+ - Improve 'exercise machines'-page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Licensed under the MIT License
+© 2020 Joona M Uutela
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+   [liikkuvaturku]: <https://liikkuvaturku.fi/>
