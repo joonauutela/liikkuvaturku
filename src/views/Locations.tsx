@@ -18,21 +18,18 @@ const Locations: React.FC = () => {
         setSelectedLocation(location);
         dispatch(setMapParams(latitude, longitude, 14));
     };
-    const handleClickMap = (location: Location, latitude: number, longitude: number, zoom: number) => {
-        setSelectedLocation(location);
-        dispatch(setMapParams(latitude, longitude, zoom));
-    };
+
     if (window.innerWidth < 900) {
         return (
             <div className="content">
-                <LocationMap handleClickMap={handleClickMap} />
+                <LocationMap setSelectedLocation={setSelectedLocation} />
                 <LocationsList handleClick={handleClick} />
             </div>
         );
     }
     return (
         <div className="content">
-            <LocationMap handleClickMap={handleClickMap} />
+            <LocationMap setSelectedLocation={setSelectedLocation} />
             <Row>
                 <Col span={12}>
                     <LocationsList handleClick={handleClick} />

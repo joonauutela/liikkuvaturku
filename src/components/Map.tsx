@@ -1,23 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer, Viewport } from 'react-leaflet';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState, Location } from '../types';
 import { Link } from 'react-router-dom';
+import { setMapParams } from '../redux/actions/map';
 
 import '../styles/locations-view.css';
 
-const LocationMap: React.FC<{ handleClickMap: (location: Location, latitude: number, longitude: number, zoom: number) => void }> = ({ handleClickMap }) => {
+const LocationMap: React.FC<{ setSelectedLocation: React.Dispatch<React.SetStateAction<Location | null>> }> = ({ setSelectedLocation }) => {
 
     const [lat, setLat] = useState(60.454510);
     const [long, setLong] = useState(22.264824);
 
     let zoom = 13;
-
+    const dispatch = useDispatch();
     const selectLocations = (state: RootState) => state.locations;
     const selectMapParams = (state: RootState) => state.map;
 
     const locations = useSelector(selectLocations);
     const mapParams = useSelector(selectMapParams);
+
+    const handleClickMap = (location: Location, latitude: number, longitude: number, zoom: number) => {
+        dispatch(setMapParams(latitude, longitude, zoom));
+        setSelectedLocation(location);
+    };
 
     useEffect(() => {
         setLat(mapParams.latitude);

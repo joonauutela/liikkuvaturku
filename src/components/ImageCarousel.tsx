@@ -3,6 +3,7 @@ import React from 'react';
 import { Carousel } from 'antd';
 import { useSelector } from 'react-redux';
 import { RootState } from '../types';
+import { Spin } from 'antd';
 
 import '../styles/locationInfo-view.css';
 
@@ -13,8 +14,19 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
 
     const selectedLocation = locations.filter(location => location.id === id)[0];
 
-    if (selectedLocation === null || !selectedLocation) return null;
-    else if (!selectedLocation.images[0]) return null;
+    if (selectedLocation === null || !selectedLocation) return (
+        <div className="spinner">
+            <Spin size="large" style={{ color: "white" }} />
+            <h1>Loading...</h1>
+        </div>
+    );
+
+    else if (!selectedLocation.images[0]) return (
+        <div className="spinner">
+            <Spin size="large" style={{ color: "white" }} />
+            <h1>Loading...</h1>
+        </div>
+    );
     return (
         <Carousel draggable={true}>
             {selectedLocation.images.map(image => {
@@ -25,6 +37,7 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
                 );
             })}
         </Carousel>
+
     );
 };
 

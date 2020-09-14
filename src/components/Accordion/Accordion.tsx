@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from 'react';
+import { Spin } from 'antd';
 import './Accordion.css';
 
 const Accordion: React.FC<{ name: string; content: string; reps: string; sets: string; image: string }> = ({ name, content, reps, sets, image }) => {
@@ -22,7 +23,12 @@ const Accordion: React.FC<{ name: string; content: string; reps: string; sets: s
                 onClick={toggleActive}
                 className="menu_item-button"
             >
-                <img className="accordion_item-image" src={require(`../../media/machines/${image}`)} />
+                {!image && image === null
+                    ?
+                    <Spin size="large" />
+                    :
+                    <img className="accordion_item-image" src={require(`../../media/machines/${image}`)} />
+                }
                 <div className="accordion-title-content">
                     <p>{name}<span className={active ? 'accordion-icon rotate' : 'accordion-icon'}>></span></p>
                 </div>

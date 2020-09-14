@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { ParamTypes } from '../types';
+
 import ImageCarousel from '../components/ImageCarousel';
 import LocationInfoBox from '../components/LocationInfoBox';
 
