@@ -13,7 +13,7 @@ const SelectedListItem: React.FC<{ selectedLocation: Location | null }> = ({ sel
                     ?
                     <div>
                         <br />
-                        <h3 style={{ color: "white" }}>Valitse sijainti kartalta tai listalta</h3>
+                        <h3 style={{ color: 'white' }}>Valitse sijainti kartalta tai listalta</h3>
                         <br />
                     </div>
                     :

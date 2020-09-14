@@ -1,6 +1,6 @@
 import { Machine } from '../../types';
 import { AppActions, SET_MACHINES } from '../actionTypes';
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 import { AppState } from '../../store/configureStore';
 import firebase from '../../firebase';
 

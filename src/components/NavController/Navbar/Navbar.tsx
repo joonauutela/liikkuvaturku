@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import DrawerToggle from '../SideDrawer/DrawerToggle';
 
 import './Navbar.css';
@@ -11,7 +11,7 @@ const Navbar: React.FC<{ drawerHandler: () => void }> = ({ drawerHandler }) => {
                 <div className="navbar_toggle-button">
                     <DrawerToggle click={drawerHandler} />
                 </div>
-                <Link to={"/"} className="navbar_logo">LIIKKUVATURKU</Link>
+                <Link to={'/'} className="navbar_logo">LIIKKUVATURKU</Link>
                 <div className="spacer" />
                 <div className="navbar_navigation-items">
                     <ul>

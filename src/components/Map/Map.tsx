@@ -58,7 +58,6 @@ const LocationMap: React.FC<{ setSelectedLocation: React.Dispatch<React.SetState
                             <p className="info-item">Katso kuvat täältä</p>
                         </Link>
                     </Popup>
-
                 </Marker>
             )}
         </Map>

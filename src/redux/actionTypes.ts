@@ -1,7 +1,7 @@
 import { Location, Image, Map, Machine } from '../types';
 
 // Actions types for all locations.
-export const SET_LOCATIONS = "GET_LOCATIONS";
+export const SET_LOCATIONS = 'GET_LOCATIONS';
 
 export interface SetLocationsAction {
     type: typeof SET_LOCATIONS;
@@ -14,7 +14,7 @@ export type LocationActions = SetLocationsAction;
 
 
 // Action types for selected location.
-export const SET_SELECTED_LOCATION = "SET_SELECTED_LOCATION";
+export const SET_SELECTED_LOCATION = 'SET_SELECTED_LOCATION';
 
 
 export interface SetSelectedLocationAction {
@@ -27,7 +27,7 @@ export interface SetSelectedLocationAction {
 export type SelectedLocationActions = SetSelectedLocationAction;
 
 // Action types for image URLS.
-export const SET_IMAGES = "SET_IMAGES";
+export const SET_IMAGES = 'SET_IMAGES';
 
 export interface SetImageAction {
     type: typeof SET_IMAGES;
@@ -39,7 +39,7 @@ export interface SetImageAction {
 export type ImageActions = SetImageAction;
 
 // Action types for map parameters
-export const SET_MAP = "SET_MAP";
+export const SET_MAP = 'SET_MAP';
 
 export interface SetMapActions {
     type: typeof SET_MAP;
@@ -51,7 +51,7 @@ export interface SetMapActions {
 export type MapActions = SetMapActions;
 
 // Action types for excercise machines
-export const SET_MACHINES = "SET_MACHINE";
+export const SET_MACHINES = 'SET_MACHINE';
 
 export interface SetMachineActions {
     type: typeof SET_MACHINES;

@@ -1,6 +1,6 @@
 import { Image } from '../../types';
 import { AppActions, SET_IMAGES } from '../actionTypes';
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 import { AppState } from '../../store/configureStore';
 import axios from 'axios';
 

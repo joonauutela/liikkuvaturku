@@ -1,6 +1,6 @@
 import { Location } from '../../types';
 import { AppActions, SET_LOCATIONS } from '../actionTypes';
-import { Dispatch } from "redux";
+import { Dispatch } from 'redux';
 import { AppState } from '../../store/configureStore';
 import firebase from '../../firebase';
 

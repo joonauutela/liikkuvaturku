@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import { Carousel } from 'antd';
 import { useSelector } from 'react-redux';
@@ -16,14 +15,14 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
 
     if (selectedLocation === null || !selectedLocation) return (
         <div className="spinner">
-            <Spin size="large" style={{ color: "white" }} />
+            <Spin size="large" style={{ color: 'white' }} />
             <h1>Loading...</h1>
         </div>
     );
 
     else if (!selectedLocation.images[0]) return (
         <div className="spinner">
-            <Spin size="large" style={{ color: "white" }} />
+            <Spin size="large" style={{ color: 'white' }} />
             <h1>Loading...</h1>
         </div>
     );
@@ -32,6 +31,7 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
             {selectedLocation.images.map(image => {
                 return (
                     <div className="img-container" key={image}>
+                        {/* eslint-disable-next-line no-undef */}
                         <img src={require(`../../media/locations/${image}`)} />
                     </div>
                 );

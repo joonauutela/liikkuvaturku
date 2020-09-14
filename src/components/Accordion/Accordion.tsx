@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from 'react';
 import { Spin } from 'antd';
 
@@ -31,15 +29,15 @@ const Accordion: React.FC<{ name: string; content: string; reps: string; sets: s
                     <img className="accordion_item-image" src={require(`../../media/machines/${image}`)} />
                 }
                 <div className="accordion-title-content">
-                    <p>{name}<span className={active ? 'accordion-icon rotate' : 'accordion-icon'}>></span></p>
+                    <p>{name}<span className={active ? 'accordion-icon rotate' : 'accordion-icon'}>{'>'}</span></p>
                 </div>
             </button>
             <div className="menu_item-content" ref={contentRef}>
-                <h4 style={{ color: "white" }}>Liikeohjeet:</h4>
+                <h4 style={{ color: 'white' }}>Liikeohjeet:</h4>
                 <p>
                     {content}
                 </p>
-                <h4 style={{ color: "white" }}>Liikemäärä:</h4>
+                <h4 style={{ color: 'white' }}>Liikemäärä:</h4>
                 <p>Tee {reps} toistoa ja {sets} settiä. Pidä settien välissä 30-60 sekunnin lepotauko.</p>
             </div>
         </div>

@@ -18,7 +18,7 @@ const LocationInfoBox: React.FC<{ id: string }> = ({ id }) => {
         <div>
             <h1>{selectedLocation.name}</h1>
             <p className="info-text">Osoite: {selectedLocation.address}</p>
-            <Link to={`/locations`}><Button ghost className="button">Takaisin</Button></Link>
+            <Link to={'/locations'}><Button ghost className="button">Takaisin</Button></Link>
         </div>
     );
 };
