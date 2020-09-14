@@ -1,0 +1,20 @@
+.selected-item-container {
+    color: white;
+    background: rgba(255, 255, 255, 0.157);
+    margin-bottom: 20px;
+    padding: 20px;
+    margin: 10px;
+    margin-left: -0px;
+    height: 25rem;
+  }
+  
+  .info-item {
+    text-align: left;
+    padding: 5px;
+  }
+  
+  .info-box {
+    background: rgba(255, 255, 255, 0.164);
+    font-size: 20px;
+    padding-left: 30px;
+  }

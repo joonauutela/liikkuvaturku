@@ -1,0 +1,7 @@
+.leaflet-container {
+    width: 95%;
+    margin: .5%;
+    height: 50vh;
+    margin-left: 2%;
+    z-index: 90;
+  }

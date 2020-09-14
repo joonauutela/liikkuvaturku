@@ -2,10 +2,10 @@
 import React from 'react';
 import { Carousel } from 'antd';
 import { useSelector } from 'react-redux';
-import { RootState } from '../types';
+import { RootState } from '../../types';
 import { Spin } from 'antd';
 
-import '../styles/locationInfo-view.css';
+import './ImageCarousel.css';
 
 const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
 
@@ -32,7 +32,7 @@ const ImageCarousel: React.FC<{ id: string }> = ({ id }) => {
             {selectedLocation.images.map(image => {
                 return (
                     <div className="img-container" key={image}>
-                        <img src={require(`.././media/locations/${image}`)} />
+                        <img src={require(`../../media/locations/${image}`)} />
                     </div>
                 );
             })}

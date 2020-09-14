@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/header.css';
+
+import './Hero.css';
 
 const Hero: React.FC = () => {
     return (

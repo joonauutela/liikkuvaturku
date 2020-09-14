@@ -1,0 +1,15 @@
+.footer {
+    padding-top: 3rem;
+    height: 15vh;
+}
+
+.footer-inner {
+    padding-top: 2rem;
+    position: relative;
+    border-top: 1px solid white !important;
+    border-width: 50%;
+    width: 33%;
+    margin-left: 32%;
+    font-size: 0.8rem;
+    color: white;
+}

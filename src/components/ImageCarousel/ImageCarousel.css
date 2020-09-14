@@ -1,0 +1,13 @@
+.img-container {
+    width: 100%;
+    height: auto;
+    max-height: 30%;
+}
+  
+  /* resize images */
+.img-container img {
+    width: 100%;
+    margin: -15% 0;
+    padding-top: 2%;
+    overflow: hidden;
+}

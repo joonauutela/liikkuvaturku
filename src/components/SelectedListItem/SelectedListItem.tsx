@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Location } from '../types';
+import { Location } from '../../types';
 
-import '../styles/locations-view.css';
+import './SelectedListItem.css';
 
 const SelectedListItem: React.FC<{ selectedLocation: Location | null }> = ({ selectedLocation }) => {
     return (

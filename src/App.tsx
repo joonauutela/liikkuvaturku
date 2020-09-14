@@ -11,7 +11,7 @@ import { setLocations } from './redux/actions/locations';
 import { setMachines } from './redux/actions/machines';
 
 import NavController from './components/NavController/NavController';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 
 import './App.css';
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../types';
+import { RootState } from '../../types';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 
-import '../styles/locationInfo-view.css';
+import './LocationInfoBox.css';
 
 const LocationInfoBox: React.FC<{ id: string }> = ({ id }) => {
 

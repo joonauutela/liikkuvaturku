@@ -2,6 +2,7 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect, useRef } from 'react';
 import { Spin } from 'antd';
+
 import './Accordion.css';
 
 const Accordion: React.FC<{ name: string; content: string; reps: string; sets: string; image: string }> = ({ name, content, reps, sets, image }) => {

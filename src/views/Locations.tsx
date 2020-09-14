@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import '../App.css';
 import { Row, Col } from 'antd';
-import LocationMap from '../components/Map';
-import LocationsList from '../components/LocationsList';
-import SelectedListItem from '../components/SelectedListItem';
+import LocationMap from '../components/Map/Map';
+import LocationsList from '../components/LocationsList/LocationsList';
+import SelectedListItem from '../components/SelectedListItem/SelectedListItem';
 import { useDispatch } from 'react-redux';
 import { setMapParams } from '../redux/actions/map';
 import { Location } from '../types';

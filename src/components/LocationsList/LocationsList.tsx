@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { RootState, Location } from '../types';
+import { RootState, Location } from '../../types';
 import { Link } from 'react-router-dom';
 
-import '../styles/locations-view.css';
+import './LocationsList.css';
 
 const LocationsList: React.FC<{ handleClick: (location: Location, latitude: number, longitude: number) => void }> = ({ handleClick }) => {
 

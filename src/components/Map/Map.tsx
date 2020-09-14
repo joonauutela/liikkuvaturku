@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Map, Marker, Popup, TileLayer, Viewport } from 'react-leaflet';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState, Location } from '../types';
+import { RootState, Location } from '../../types';
 import { Link } from 'react-router-dom';
-import { setMapParams } from '../redux/actions/map';
+import { setMapParams } from '../../redux/actions/map';
 
-import '../styles/locations-view.css';
+import './Map.css';
 
 const LocationMap: React.FC<{ setSelectedLocation: React.Dispatch<React.SetStateAction<Location | null>> }> = ({ setSelectedLocation }) => {
 
@@ -40,30 +40,28 @@ const LocationMap: React.FC<{ setSelectedLocation: React.Dispatch<React.SetState
             zoom = viewport.zoom;
     };
     return (
-        <div className="map-container">
-            <Map viewport={viewport} onViewportChange={getZoom}>
-                <TileLayer
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                    attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                />
-                {locations.map(location =>
-                    <Marker
-                        key={location.id}
-                        position={[location.latitude, location.longitude]}
-                        onClick={() => handleClickMap(location, location.latitude, location.longitude, zoom)}
-                    >
-                        <Popup>
-                            <p><b>Nimi:</b> {location.name}</p>
-                            <p><b>Osoite:</b> {location.address}</p>
-                            <Link to={`/locations/${location.id}`}>
-                                <p className="info-item">Katso kuvat täältä</p>
-                            </Link>
-                        </Popup>
+        <Map viewport={viewport} onViewportChange={getZoom}>
+            <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+            />
+            {locations.map(location =>
+                <Marker
+                    key={location.id}
+                    position={[location.latitude, location.longitude]}
+                    onClick={() => handleClickMap(location, location.latitude, location.longitude, zoom)}
+                >
+                    <Popup>
+                        <p><b>Nimi:</b> {location.name}</p>
+                        <p><b>Osoite:</b> {location.address}</p>
+                        <Link to={`/locations/${location.id}`}>
+                            <p className="info-item">Katso kuvat täältä</p>
+                        </Link>
+                    </Popup>
 
-                    </Marker>
-                )}
-            </Map>
-        </div>
+                </Marker>
+            )}
+        </Map>
     );
 };
 

@@ -1,0 +1,13 @@
+.container {
+    background: rgba(255, 255, 255, 0.103);
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    padding-bottom: 5%;
+}
+  
+.info-text {
+    color: white;
+    font-size: 20px;
+    padding-bottom: 1%;
+}
