@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Col } from 'antd';
+
 import LocationMap from '../components/Map/Map';
 import LocationsList from '../components/LocationsList/LocationsList';
 import SelectedListItem from '../components/SelectedListItem/SelectedListItem';
+
 import { useDispatch } from 'react-redux';
 import { setMapParams } from '../redux/actions/map';
+import { setLocations } from '../redux/actions/locations';
 import { Location } from '../types';
 
 const Locations: React.FC = () => {
 
     const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
-
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(setLocations());
+    }, [dispatch]);
 
     const handleClick = (location: Location, latitude: number, longitude: number) => {
         setSelectedLocation(location);
