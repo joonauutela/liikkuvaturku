@@ -13,3 +13,4 @@ describe('Home', () => {
         expect(screen.queryByText("Liikkumista ulkolaitteilla")).toBeTruthy()
     })
 })
+//
