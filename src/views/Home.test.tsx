@@ -10,7 +10,6 @@ describe('Home', () => {
         </MemoryRouter>
     )
     it('Render header text', () => {
-        expect(screen.queryByText("Liikkumista ulkolaitteilla")).toBeTruthy()
+        expect(screen.queryByText("Liiokkumista ulkolaitteilla")).toBeTruthy()
     })
 })
-//
