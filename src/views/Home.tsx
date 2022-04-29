@@ -9,7 +9,7 @@ const Home: React.FC = () => {
         <div className="content">
             <Hero />
             <div className="card">
-                <h1 style={{ color: 'white' }}>Liikkumista ulkolaitteilla</h1>
+                <h1 style={{ color: 'white' }}>Liikkumis ulkolaitteilla</h1>
                 <p>Ympäri Turun kaupunkia sijaitsevat ulkokuntolaitteet ovat mainio tapa kasvattaa ja ylläpitää lihaskuntoa.
                 liikkuvaturku.fi avulla löydät laitteiden sijainnit helposti kartalta laadukkailla kuvilla varustettuna.
                 </p>
